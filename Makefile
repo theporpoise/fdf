@@ -6,7 +6,7 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/22 11:22:29 by mgould            #+#    #+#              #
-#    Updated: 2017/04/26 18:22:01 by mgould           ###   ########.fr        #
+#    Updated: 2017/04/26 18:30:14 by mgould           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MLX = ./minilibx_macos
 
 MLXA = ./minilibx_macos/libmlx.a
 
-CFLAGS = -g -Wall -Wextra -Werror -I $(LIB) -I .
+CFLAGS = -g -Wall -Wextra -Werror -I $(LIB) -I $(MLX)
 
 OBJCS = main.o
 
