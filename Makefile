@@ -6,15 +6,19 @@
 #    By: mgould <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/22 11:22:29 by mgould            #+#    #+#              #
-#    Updated: 2017/04/26 17:33:46 by mgould           ###   ########.fr        #
+#    Updated: 2017/04/26 18:22:01 by mgould           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME1 = fdf
+NAME1 = myfdf
 
-LIB = thelibrary
+LIB = ../thelibrary
 
-LIBA = thelibrary/libft.a
+LIBA = ../thelibrary/libft.a
+
+MLX = ./minilibx_macos
+
+MLXA = ./minilibx_macos/libmlx.a
 
 CFLAGS = -g -Wall -Wextra -Werror -I $(LIB) -I .
 
@@ -23,10 +27,11 @@ OBJCS = main.o
 all: $(NAME1)
 
 $(NAME1): $(OBJCS) $(LIBA)
-	gcc $(CFLAGS) -o $@ $^
+	gcc $(CFLAGS) -o $@ $^ $(MLXA) -framework OpenGL -framework AppKit
 
 $(LIBA): force
 	$(MAKE) -C $(LIB)
+	$(MAKE) -C $(MLX)
 
 force:
 	@true
